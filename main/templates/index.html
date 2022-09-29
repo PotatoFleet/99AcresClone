@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.jpg' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <script src="{% static 'js/locations.js' %}" defer></script>
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <title>99acres</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="first">
+        <div class="bg-container">
+          <img
+            class="head-bg clickable"
+            src="{% static 'img/topbg.jpg' %}"
+            alt="Background"
+          />
+        </div>
+        <div class="search-container">
+          <div class="clickable buy">Buy</div>
+          <div class="clickable rent">Rent</div>
+          <div class="clickable pg">PG / Co-living</div>
+          <div class="clickable commercial">Commercial</div>
+          <div class="clickable coworking">Coworking</div>
+          <div class="clickable plots">Plots/Land</div>
+          <div class="clickable projects">Projects</div>
+          <div class="clickable dealers">Dealers</div>
+          <div class="clickable type">All Residential</div>
+          <div class="search">
+            <img src="{% static 'img/search.png' %}" alt="Search" width="16" />
+            <input
+              type="text"
+              placeholder="Search 'Flats for Rent in Hyderabad'"
+              class="search__input"
+            />
+            <button class="search__btn clickable">Search</button>
+            <div class="search__dropdown"></div>
+          </div>
+        </div>
+      </section>
+      <nav>
+        <div class="left">
+          <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo" width="105" />
+          </div>
+        </div>
+        <div class="center">
+          <div class="for-buyers clickable">For Buyers</div>
+          <div class="for-tenants clickable">For Tenants</div>
+          <div class="for-owners clickable">For Owners</div>
+          <div class="for-dealers clickable">For Dealers / Builders</div>
+        </div>
+        <div class="right">
+          <div class="post-property clickable">Post Property</div>
+          <img
+            src="{% static 'img/guest.svg' %}"
+            class="account clickable"
+            width="24"
+            height="24"
+          />
+        </div>
+      </nav>
+      <div class="exploration">
+        <div class="mini-heading">
+          Get started with exploring real estate options
+        </div>
+        <div class="cards">
+          <div class="card">
+            <img
+              src="{% static 'img/card1.webp' %}"
+              alt="card image"
+              width="180"
+              class="card__image"
+            />
+            <div class="card__heading">Buying a home</div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'img/card2.webp' %}"
+              alt="card image"
+              width="180"
+              class="card__image"
+            />
+            <div class="card__heading">Renting a home</div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'img/card3.webp' %}"
+              alt="card image"
+              width="180"
+              class="card__image"
+            />
+            <div class="card__heading">Sell/Rent your property</div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'img/card4.webp' %}"
+              alt="card image"
+              width="180"
+              class="card__image"
+            />
+            <div class="card__heading">Plots/Land</div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'img/card5.webp' %}"
+              alt="card image"
+              width="180"
+              class="card__image"
+            />
+            <div class="card__heading">PG and co-living</div>
+          </div>
+          <div class="card">
+            <img
+              src="{% static 'img/card6.webp' %}"
+              alt="card image"
+              width="180"
+              class="card__image"
+            />
+            <div class="card__heading">Buying commerical spaces</div>
+          </div>
+        </div>
+      </div>
+      <div class="more">
+        <div class="heading-container">
+          <div class="lightbulb-icon">
+            <img
+              src="{% static 'img/batch_prediction.png' %}"
+              alt="insights image"
+              width="64"
+            />
+          </div>
+          <div class="heading">More Insights & Utilities</div>
+          <div class="subheading">Go from browsing to buying</div>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="card__heading">Check Property Rates & Price Trends</div>
+            <div class="card__description">
+              in any city, locality or society
+            </div>
+            <div class="card__link">
+              <div>Price Trends</div>
+              <img src="{% static 'img/arrow.png' %}" alt="arrow" height="20" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__heading">
+              Get to know different localities before you buy/rent...
+            </div>
+            <div class="card__description">
+              Check prices, lifestyle, reviews & more
+            </div>
+            <div class="card__link">
+              <div>Locality Insights</div>
+              <img src="{% static 'img/arrow.png' %}" alt="arrow" height="20" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__heading">
+              What locals say about their locality / society?
+            </div>
+            <div class="card__description">Get to know from residents</div>
+            <div class="card__link">
+              <div>Read Ratings & Reviews</div>
+              <img src="{% static 'img/arrow.png' %}" alt="arrow" height="20" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="99acres">
+          <div class="footer__header">99Acres</div>
+          <div class="footer__links">
+            <div class="footer__link">Mobile Apps</div>
+            <div class="footer__link">Our Services</div>
+            <div class="footer__link">Price Trends</div>
+            <div class="footer__link">Post your Property</div>
+            <div class="footer__link">Builders in India</div>
+            <div class="footer__link">Customer Service</div>
+          </div>
+        </div>
+        <div class="company">
+          <div class="footer__header">Company</div>
+          <div class="footer__links">
+            <div class="footer__link">About Us</div>
+            <div class="footer__link">Contact Us</div>
+            <div class="footer__link">Careers with us</div>
+            <div class="footer__link">Terms & Conditions</div>
+            <div class="footer__link">Request Info</div>
+            <div class="footer__link">Feedback</div>
+            <div class="footer__link">Report a problem</div>
+            <div class="footer__link">Privacy Policy</div>
+          </div>
+        </div>
+        <div class="partners">
+          <div class="footer__header">Our Partners</div>
+          <div class="footer__links">
+            <div class="footer__link">Naukri.com - Jobs in India</div>
+            <div class="footer__link">Brijj.com - Professional Networking</div>
+            <div class="footer__link">Shiksha.com - Education Career Info</div>
+            <div class="footer__link">Paisabazaar.com - Insurance India</div>
+            <div class="footer__link">Jeevansathi.com - Matrimonials</div>
+          </div>
+        </div>
+        <div class="contactus">
+          <div class="footer__header">Contact Us</div>
+          <div class="footer__text">
+            <div class="toll">Toll Free - 1800 41 99099</div>
+            <div class="timings">Monday - Saturday (9:00AM to 11:00PM IST)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

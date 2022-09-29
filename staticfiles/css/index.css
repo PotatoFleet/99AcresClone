@@ -1,0 +1,382 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5em 3.45em;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 5em;
+  align-items: center;
+  color: white;
+  z-index: 10;
+}
+
+nav.show-background {
+  background: #005ca8;
+}
+
+nav > * {
+  display: flex;
+  gap: 1.75em;
+  height: 100%;
+}
+
+.center {
+  padding-top: 0.3em;
+  padding-left: 8em;
+}
+
+.center > * {
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  height: 100%;
+  transition: color 150ms ease-out;
+}
+
+.center > *::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1em;
+  width: 100%;
+  height: 3px;
+  opacity: 0;
+  background: rgb(36, 120, 216);
+  border-radius: 0.25em;
+  transition: opacity 150ms ease-out;
+}
+
+.center > *:hover {
+  color: white;
+}
+
+.center > *:hover::after {
+  opacity: 1;
+}
+
+.first {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bg-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.head-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 300ms linear;
+}
+
+.head-bg:hover {
+  transform: scale(1.1);
+}
+
+.account {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.search-container {
+  width: 1000px;
+  height: 250px;
+  background: white;
+  transform: translateY(-50%);
+  border-radius: 1.5em;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
+  place-items: center;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.search-container > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.search-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background: rgba(226, 225, 225, 0.5);
+  width: 100%;
+}
+
+.search-container::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 1px;
+  top: 50%;
+  left: calc(100% / 4);
+  background: rgba(226, 225, 225, 0.5);
+}
+
+.search-container > *:not(.search, .type)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgb(36, 120, 216);
+  transform: scaleX(0);
+  transition: transform 200ms ease-out;
+}
+
+.search-container > *:not(.search, .type):hover::after {
+  transform: scaleX(1);
+}
+
+.search-container > * {
+  font-size: 1.1em;
+  color: #42526e;
+}
+
+.type {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+.search {
+  grid-row: 2;
+  grid-column: 3 / span 6;
+  display: flex;
+  gap: 1em;
+  padding: 0 1em;
+  position: relative;
+}
+
+.search__input {
+  border: none;
+  width: 100%;
+  height: 90%;
+  color: #42526e;
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__btn {
+  background: rgb(62, 144, 238);
+  border: none;
+  border-radius: 0.25em;
+  padding: 1em 2em;
+  color: white;
+  text-shadow: 0 0 1px white;
+  transition: background 150ms ease-out;
+}
+
+.search__btn:hover {
+  background: rgb(29, 102, 185);
+}
+
+.search__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 80%;
+  box-shadow: 3px 8px 10px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 0.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.search__dropdown:empty {
+  display: none;
+}
+
+.search__dropdown > * {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+}
+
+.search__dropdown > *:hover {
+  background: #eee;
+}
+
+.exploration {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.mini-heading {
+  color: #8993a4;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.exploration > .cards {
+  display: flex;
+  gap: 2em;
+}
+
+.exploration > .cards > .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 0.9em;
+  color: #253858;
+}
+
+.more {
+  background: #f0f9ff;
+  width: 1000px;
+  border-radius: 1em;
+  margin: 5em auto;
+  margin-bottom: 10em;
+  padding: 5em;
+  padding-bottom: 8em;
+  position: relative;
+}
+
+.lightbulb-icon {
+  grid-row: 1 / span 2;
+}
+
+.more > .heading-container {
+  width: 50%;
+  height: 25%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 4fr;
+}
+
+.more > .heading-container > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.more > .heading-container > .heading {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #091e42;
+  align-items: flex-end;
+}
+
+.more > .heading-container > .subheading {
+  font-size: 0.85em;
+  font-weight: 400;
+  color: #42526e;
+  align-items: flex-start;
+}
+
+.more > .cards {
+  position: absolute;
+  left: 0;
+  top: 70%;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  max-height: 300px;
+}
+
+.more .card {
+  cursor: pointer;
+  background: white;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 2em;
+  margin-bottom: 10em;
+  max-width: 300px;
+  box-shadow: 0 1px 4px 0 rgba(0, 106, 194, 0.2);
+  transition: box-shadow 300ms linear;
+}
+
+.more .card:hover {
+  box-shadow: 0 1px 6px 2px rgba(0, 106, 194, 0.2);
+}
+
+.card__heading {
+  color: #041533;
+  font-size: 1.1em;
+}
+
+.card__description {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #8993a4;
+}
+
+.card__link {
+  display: flex;
+  color: #0078db;
+}
+
+.footer {
+  background: #151c22;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  gap: 3em;
+  padding: 2em;
+  color: white;
+}
+
+.footer__header {
+  font-size: 1.1em;
+  margin: 2em 0;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.timings {
+  font-size: 0.8em;
+  color: #8993a4;
+  font-weight: 400;
+  margin-top: 0.25em;
+}
+
+.footer__link {
+  cursor: pointer;
+  max-width: max-content;
+}
